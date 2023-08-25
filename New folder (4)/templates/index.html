@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css') }}"/>
+    <title>Marks App</title>
+</head>
+<body>
+    <h1> ``Predict Marks of Students`` </h1>
+    <div class="login"> 
+        <form action="{{ url_for('predict')}}" method="post"> 
+            <input
+            type="text"
+            name="Enter number of study hours"
+            placeholder="Enter number of study hours"
+            required="required"
+          />
+
+          <button type="submit" class="btn btn-primary btn-block btn-large">
+            Predict
+          </button>
+
+        </form>
+        <br />
+      <br />
+      
+      <span> {{ prediction_text }} </span>
+    </div> 
+    <a href="https://www.kaggle.com/datasets/himanshunakrani/student-study-hours" target="_blank" title="Go to Kaggle"> Kaggle </a>
+</body>
+</html>
